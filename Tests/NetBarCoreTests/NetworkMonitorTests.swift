@@ -56,7 +56,7 @@ final class NetworkMonitorTests: XCTestCase {
       [
         "en0": InterfaceCounters(receivedBytes: 1000, sentBytes: 0),
         "en1": InterfaceCounters(receivedBytes: 999_999, sentBytes: 0),  // new
-      ],
+      ]
     ])
     let clock = FakeClock(secondsSince1970: [0, 1])
     let monitor = NetworkMonitor(reader: reader, now: clock.next)

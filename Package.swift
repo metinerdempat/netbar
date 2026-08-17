@@ -9,17 +9,17 @@ let package = Package(
   targets: [
     .target(
       name: "NetBarCore",
-      path: "Sources/NetBarCore",
+      path: "Sources/NetBarCore"
     ),
     .executableTarget(
       name: "NetBar",
       dependencies: ["NetBarCore"],
-      path: "Sources/NetBar",
+      path: "Sources/NetBar"
     ),
     .testTarget(
       name: "NetBarCoreTests",
       dependencies: ["NetBarCore"],
-      path: "Tests/NetBarCoreTests",
-    ),
-  ],
+      path: "Tests/NetBarCoreTests"
+    )
+  ]
 )

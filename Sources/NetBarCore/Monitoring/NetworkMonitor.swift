@@ -48,7 +48,7 @@ final class NetworkMonitor: RateSampling {
 
   init(
     reader: InterfaceCounterReading = InterfaceTrafficReader(),
-    now: @escaping () -> Date = Date.init,
+    now: @escaping () -> Date = Date.init
   ) {
     self.reader = reader
     self.now = now
@@ -74,7 +74,7 @@ final class NetworkMonitor: RateSampling {
 
     return NetworkRate(
       downBytesPerSecond: Double(deltaDown) / elapsed,
-      upBytesPerSecond: Double(deltaUp) / elapsed,
+      upBytesPerSecond: Double(deltaUp) / elapsed
     )
   }
 }

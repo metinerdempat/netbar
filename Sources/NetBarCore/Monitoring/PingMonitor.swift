@@ -18,7 +18,7 @@ protocol LatencyMeasuring: AnyObject {
 /// never reaches `ping` in the first place.
 enum HostValidator {
   private static let allowed = CharacterSet(
-    charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.-:",
+    charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.-:"
   )
 
   static func isValid(_ host: String) -> Bool {
