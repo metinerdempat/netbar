@@ -51,7 +51,7 @@ enum PingOutputParser {
 ///  • One measurement at a time (in-flight lock) → no process pile-up.
 final class PingMonitor: LatencyMeasuring {
   private let host: String
-  private let queue = DispatchQueue(label: "com.netbar.ping", qos: .utility)
+  private let queue = DispatchQueue(label: "com.netcardio.ping", qos: .utility)
   private var isMeasuring = false  // read/written on the main queue only
 
   /// Returns `nil` for an invalid host (keeps the caller on the safe side).

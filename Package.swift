@@ -1,25 +1,25 @@
 // swift-tools-version:5.9
 import PackageDescription
 
-// Mimari: tüm mantık `NetBarCore` kütüphanesinde (test edilebilir), `NetBar`
-// yürütülebiliri yalnızca ince bir kompozisyon kabuğudur (main.swift).
+// Architecture: all logic lives in the `NetcardioCore` library (testable); the
+// `Netcardio` executable is only a thin composition shell (NetcardioApp.swift).
 let package = Package(
-  name: "NetBar",
+  name: "Netcardio",
   platforms: [.macOS(.v13)],
   targets: [
     .target(
-      name: "NetBarCore",
-      path: "Sources/NetBarCore"
+      name: "NetcardioCore",
+      path: "Sources/NetcardioCore"
     ),
     .executableTarget(
-      name: "NetBar",
-      dependencies: ["NetBarCore"],
-      path: "Sources/NetBar"
+      name: "Netcardio",
+      dependencies: ["NetcardioCore"],
+      path: "Sources/Netcardio"
     ),
     .testTarget(
-      name: "NetBarCoreTests",
-      dependencies: ["NetBarCore"],
-      path: "Tests/NetBarCoreTests"
+      name: "NetcardioCoreTests",
+      dependencies: ["NetcardioCore"],
+      path: "Tests/NetcardioCoreTests"
     )
   ]
 )

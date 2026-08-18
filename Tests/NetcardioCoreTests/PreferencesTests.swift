@@ -1,6 +1,6 @@
 import XCTest
 
-@testable import NetBarCore
+@testable import NetcardioCore
 
 /// An in-memory key-value store for tests that never touches disk.
 private final class InMemoryStore: KeyValueStore {

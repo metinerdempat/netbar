@@ -1,6 +1,6 @@
 import XCTest
 
-@testable import NetBarCore
+@testable import NetcardioCore
 
 final class HostValidatorTests: XCTestCase {
   func testAcceptsValidHosts() {

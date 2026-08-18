@@ -1,20 +1,3 @@
-#!/usr/bin/env bash
-# Bundles Netcardio into a double-clickable .app.
-# Usage:  ./build-app.sh   →  produces ./Netcardio.app
-set -euo pipefail
-cd "$(dirname "$0")"
-
-echo "Building release..."
-swift build -c release
-
-APP="Netcardio.app"
-BIN=".build/release/Netcardio"
-
-rm -rf "$APP"
-mkdir -p "$APP/Contents/MacOS"
-cp "$BIN" "$APP/Contents/MacOS/Netcardio"
-
-cat > "$APP/Contents/Info.plist" <<'PLIST'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -31,11 +14,3 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
   <key>LSUIElement</key>            <true/>
 </dict>
 </plist>
-PLIST
-
-# Ad-hoc signature (reduces the Gatekeeper prompt; not sufficient for App Store distribution).
-codesign --force --deep --sign - "$APP" >/dev/null 2>&1 || true
-
-echo "Ready:   $(pwd)/$APP"
-echo "Open:    open $APP"
-echo "Install: cp -R $APP /Applications/"

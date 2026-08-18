@@ -1,6 +1,6 @@
 import XCTest
 
-@testable import NetBarCore
+@testable import NetcardioCore
 
 /// A fake reader that returns pre-scripted counter frames in order.
 private final class ScriptedReader: InterfaceCounterReading {
