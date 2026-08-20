@@ -6,24 +6,16 @@ A tiny, dependency-free, tested macOS menu-bar app that shows live **network spe
 ![CI](https://github.com/metinerdempat/netcardio/actions/workflows/ci.yml/badge.svg)
 
 <p align="center">
-  <img src="docs/menu-bar.png" alt="Netcardio in the macOS menu bar" width="320"><br>
-  <em>Live throughput and ping, right in the menu bar</em>
+  <img src="docs/menu-bar.png" alt="Netcardio in the macOS menu bar with its dropdown open" width="720"><br>
+  <em>Live throughput and ping in the menu bar — click for exact values and the Bytes ↔ Bits switch</em>
 </p>
 
-Menu bar: `↓4.1M ↑1.3M · 48 ms`. Clicking it opens a small menu with the exact values,
-a **Bytes ↔ Bits** unit switch, and Quit:
+<p align="center">
+  <img src="docs/demo.gif" alt="Netcardio menu-bar readout updating during a download" width="440"><br>
+  <em>The readout updates every second</em>
+</p>
 
-```
-Download:  4.12 MB/s
-Upload:    1.34 MB/s
-Ping (1.1.1.1):  48 ms
-──────────────────────
-Unit ▸   ✓ Bytes (MB/s)
-           Bits (Mbps)
-──────────────────────
-Quit
-```
-
+Menu bar: `↓4.1M ↑1.3M · 48 ms`. Clicking it shows the exact download/upload/ping values.
 The unit is switchable and persisted: **Bytes** (MB/s, binary) ↔ **Bits** (Mbps, decimal).
 
 ## Built with AI (vibecoding)
